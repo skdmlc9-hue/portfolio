@@ -1,0 +1,140 @@
+:root {
+  /* Font Family definitions */
+  --font-heading: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Global Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Light Theme Colors (Default or preferred) */
+  --bg-base: #f8fafc;
+  --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #cbd5e1;
+  
+  --accent-primary: #6366f1; /* Indigo */
+  --accent-secondary: #8b5cf6; /* Violet */
+  --accent-glow: rgba(99, 102, 241, 0.15);
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+  --glass-blur: 12px;
+  
+  --box-bg: rgba(0, 0, 0, 0.03);
+
+  /* Badge colors */
+  --badge-bg-blue: rgba(59, 130, 246, 0.1);
+  --badge-text-blue: #2563eb;
+  --badge-bg-green: rgba(16, 185, 129, 0.1);
+  --badge-text-green: #059669;
+  --badge-bg-purple: rgba(139, 92, 246, 0.1);
+  --badge-text-purple: #7c3aed;
+  --badge-bg-red: rgba(239, 68, 68, 0.1);
+  --badge-text-red: #dc2626;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Theme Colors */
+    --bg-base: #0b0f19;
+    --bg-gradient: radial-gradient(circle at top left, #111827, #0b0f19 70%);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #64748b;
+    --border-color: #1e293b;
+    
+    --accent-primary: #818cf8; /* Light Indigo */
+    --accent-secondary: #a78bfa; /* Light Violet */
+    --accent-glow: rgba(129, 140, 248, 0.2);
+    --accent-gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    
+    --glass-bg: rgba(17, 24, 39, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    --box-bg: rgba(255, 255, 255, 0.04);
+    
+    /* Dark Badge colors */
+    --badge-bg-blue: rgba(59, 130, 246, 0.15);
+    --badge-text-blue: #60a5fa;
+    --badge-bg-green: rgba(16, 185, 129, 0.15);
+    --badge-text-green: #34d399;
+    --badge-bg-purple: rgba(139, 92, 246, 0.15);
+    --badge-text-purple: #c084fc;
+    --badge-bg-red: rgba(239, 68, 68, 0.15);
+    --badge-text-red: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  background: var(--bg-base);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
